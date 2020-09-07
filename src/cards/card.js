@@ -6,18 +6,24 @@ const Cards = ({ arrTaste, toggle, toggleChange, mouseHandler, onBuy }) => {
       e.preventDefault();
       onBuy(index);
     };
+    const className = `Card ${arrTaste[index].disable ? "disabled" : ""} ${
+      toggle[index] ? "selected" : "active"
+    }`;
     return (
       <div key={index}>
         <div
-          className={`Card ${arrTaste[index].disable ? "disabled" : ""}`}
+          className={className}
           onClick={() => toggleChange(index)}
           onMouseLeave={() => mouseHandler(index)}
-          style={{
-            border: toggle[index] ? "5px solid #d91667" : "5px solid #1698d9",
-          }}
+          // style={{
+          //   border: toggle[index] ? "5px solid #d91667" : "5px solid #1698d9",
+          // }}
         >
           <div className="header">
-            <div className="title">Сказочное заморское яство</div>
+            <div className="title">
+              <span className="titleActive">Котэ не одобряет?</span>
+              <span className="titleDefault">Сказочное заморское яство</span>
+            </div>
             <div className="name">Нямушка</div>
             <div className="taste">{arrTaste[index].taste}</div>
             <div className="info">
@@ -27,10 +33,7 @@ const Cards = ({ arrTaste, toggle, toggleChange, mouseHandler, onBuy }) => {
               </div>
             </div>
           </div>
-          <div
-            className={"cirkle"}
-            style={{ background: toggle[index] ? "#d91667" : " #1698d9" }}
-          >
+          <div className={"cirkle"}>
             <div className="weight">{arrTaste[index].weight}</div>
             <span style={{ color: "white" }}>КГ</span>
           </div>

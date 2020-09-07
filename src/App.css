@@ -75,13 +75,33 @@
   margin: 20px;
   align-self: flex-end;
 }
-
-
-
+.active{
+  border:5px solid #1698d9;
+}
+.selected{
+  border:5px solid #d91667;
+}
+.active .cirkle{
+  background: #1698d9;
+}
+.selected .cirkle{
+  background: #d91667;
+}
 .header {
   display: flex;
   flex-direction: column;
   padding-right: 20px;
+}
+.titleActive{
+  display: none;
+}
+
+.Card.selected:hover .titleDefault{
+display: none;
+}
+.Card.selected:hover .titleActive{
+display: initial;
+color: #d91667;
 }
 
 .title {
