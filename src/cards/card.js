@@ -15,9 +15,6 @@ const Cards = ({ arrTaste, toggle, toggleChange, mouseHandler, onBuy }) => {
           className={className}
           onClick={() => toggleChange(index)}
           onMouseLeave={() => mouseHandler(index)}
-          // style={{
-          //   border: toggle[index] ? "5px solid #d91667" : "5px solid #1698d9",
-          // }}
         >
           <div className="header">
             <div className="title">
